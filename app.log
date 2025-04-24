@@ -1,0 +1,121 @@
+2025-04-25 00:56:07,069 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-25 00:56:07,069 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-04-25 00:56:16,970 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2025-04-25 00:56:16,970 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-04-25 00:56:45,573 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2025-04-25 00:56:45,575 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-04-25 01:00:07,354 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2025-04-25 01:00:07,355 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-04-25 01:00:42,477 INFO root Request: {'meta': {'locale': 'ru-RU', 'timezone': 'UTC', 'client_id': 'ru.yandex.searchplugin/7.16 (none none; android 4.4.2)', 'interfaces': {'screen': {}, 'payments': {}, 'account_linking': {}}}, 'session': {'message_id': 0, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'new': True, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'request': {'command': '', 'original_utterance': '', 'nlu': {'tokens': [], 'entities': [], 'intents': {}}, 'markup': {'dangerous_context': False}, 'type': 'SimpleUtterance'}, 'version': '1.0'}
+2025-04-25 01:00:49,787 INFO root Request: {'session': {'message_id': 0, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'new': True, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'version': '1.0', 'response': {'end_session': False, 'text': 'Привет! Я могу сказать в какой стране город или сказать расстояние между городами!'}}
+2025-04-25 01:00:50,292 INFO werkzeug 127.0.0.1 - - [25/Apr/2025 01:00:50] "POST /post HTTP/1.1" 200 -
+2025-04-25 01:01:23,717 INFO root Request: {'meta': {'locale': 'ru-RU', 'timezone': 'UTC', 'client_id': 'ru.yandex.searchplugin/7.16 (none none; android 4.4.2)', 'interfaces': {'screen': {}, 'payments': {}, 'account_linking': {}}}, 'session': {'message_id': 1, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E', 'new': False}, 'request': {'command': 'москва', 'original_utterance': 'Москва', 'nlu': {'tokens': ['москва'], 'entities': [{'type': 'YANDEX.GEO', 'tokens': {'start': 0, 'end': 1}, 'value': {'city': 'москва'}}], 'intents': {}}, 'markup': {'dangerous_context': False}, 'type': 'SimpleUtterance'}, 'version': '1.0'}
+2025-04-25 01:01:57,928 ERROR server Exception on /post [POST]
+Traceback (most recent call last):
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 23, in main
+    handle_dialog(response, request.json)
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 48, in handle_dialog
+    res['response']['text'] = 'Этот город в стране - ' + get_country(cities[0])
+                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\geo.py", line 35, in get_country
+    json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
+    ~~~~^^^^^^^^^^^^
+KeyError: 'response'
+2025-04-25 01:01:57,938 INFO werkzeug 127.0.0.1 - - [25/Apr/2025 01:01:57] "[35m[1mPOST /post HTTP/1.1[0m" 500 -
+2025-04-25 01:02:17,133 INFO root Request: {'meta': {'locale': 'ru-RU', 'timezone': 'UTC', 'client_id': 'ru.yandex.searchplugin/7.16 (none none; android 4.4.2)', 'interfaces': {'screen': {}, 'payments': {}, 'account_linking': {}}}, 'session': {'message_id': 1, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E', 'new': False}, 'request': {'command': 'москва', 'original_utterance': 'Москва', 'nlu': {'tokens': ['москва'], 'entities': [{'type': 'YANDEX.GEO', 'tokens': {'start': 0, 'end': 1}, 'value': {'city': 'москва'}}], 'intents': {}}, 'markup': {'dangerous_context': False}, 'type': 'SimpleUtterance'}, 'version': '1.0'}
+2025-04-25 01:03:11,556 ERROR server Exception on /post [POST]
+Traceback (most recent call last):
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 23, in main
+    handle_dialog(response, request.json)
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 48, in handle_dialog
+    res['response']['text'] = 'Этот город в стране - ' + get_country(cities[0])
+                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\geo.py", line 35, in get_country
+    json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
+    ~~~~^^^^^^^^^^^^
+KeyError: 'response'
+2025-04-25 01:03:11,560 INFO werkzeug 127.0.0.1 - - [25/Apr/2025 01:03:11] "[35m[1mPOST /post HTTP/1.1[0m" 500 -
+2025-04-25 01:03:17,762 INFO root Request: {'meta': {'locale': 'ru-RU', 'timezone': 'UTC', 'client_id': 'ru.yandex.searchplugin/7.16 (none none; android 4.4.2)', 'interfaces': {'screen': {}, 'payments': {}, 'account_linking': {}}}, 'session': {'message_id': 1, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E', 'new': False}, 'request': {'command': 'москва', 'original_utterance': 'Москва', 'nlu': {'tokens': ['москва'], 'entities': [{'type': 'YANDEX.GEO', 'tokens': {'start': 0, 'end': 1}, 'value': {'city': 'москва'}}], 'intents': {}}, 'markup': {'dangerous_context': False}, 'type': 'SimpleUtterance'}, 'version': '1.0'}
+2025-04-25 01:04:46,740 ERROR server Exception on /post [POST]
+Traceback (most recent call last):
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 23, in main
+    handle_dialog(response, request.json)
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 48, in handle_dialog
+    res['response']['text'] = 'Этот город в стране - ' + get_country(cities[0])
+                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\geo.py", line 35, in get_country
+    json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
+    ~~~~^^^^^^^^^^^^
+KeyError: 'response'
+2025-04-25 01:04:46,743 INFO werkzeug 127.0.0.1 - - [25/Apr/2025 01:04:46] "[35m[1mPOST /post HTTP/1.1[0m" 500 -
+2025-04-25 01:04:52,766 INFO root Request: {'meta': {'locale': 'ru-RU', 'timezone': 'UTC', 'client_id': 'ru.yandex.searchplugin/7.16 (none none; android 4.4.2)', 'interfaces': {'screen': {}, 'payments': {}, 'account_linking': {}}}, 'session': {'message_id': 1, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E', 'new': False}, 'request': {'command': 'москва', 'original_utterance': 'Москва', 'nlu': {'tokens': ['москва'], 'entities': [{'type': 'YANDEX.GEO', 'tokens': {'start': 0, 'end': 1}, 'value': {'city': 'москва'}}], 'intents': {}}, 'markup': {'dangerous_context': False}, 'type': 'SimpleUtterance'}, 'version': '1.0'}
+2025-04-25 01:05:33,540 ERROR server Exception on /post [POST]
+Traceback (most recent call last):
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 23, in main
+    handle_dialog(response, request.json)
+  File "e:\my_code\code\yandex\2\Alisa2\карты\server.py", line 48, in handle_dialog
+    res['response']['text'] = 'Этот город в стране - ' + get_country(cities[0])
+                                                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\my_code\code\yandex\2\Alisa2\карты\geo.py", line 35, in get_country
+    json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
+    ~~~~^^^^^^^^^^^^
+KeyError: 'response'
+2025-04-25 01:05:33,546 INFO werkzeug 127.0.0.1 - - [25/Apr/2025 01:05:33] "[35m[1mPOST /post HTTP/1.1[0m" 500 -
+2025-04-25 01:05:56,713 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2025-04-25 01:05:56,714 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-04-25 01:06:00,309 INFO root Request: {'meta': {'locale': 'ru-RU', 'timezone': 'UTC', 'client_id': 'ru.yandex.searchplugin/7.16 (none none; android 4.4.2)', 'interfaces': {'screen': {}, 'payments': {}, 'account_linking': {}}}, 'session': {'message_id': 1, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E', 'new': False}, 'request': {'command': 'москва', 'original_utterance': 'Москва', 'nlu': {'tokens': ['москва'], 'entities': [{'type': 'YANDEX.GEO', 'tokens': {'start': 0, 'end': 1}, 'value': {'city': 'москва'}}], 'intents': {}}, 'markup': {'dangerous_context': False}, 'type': 'SimpleUtterance'}, 'version': '1.0'}
+2025-04-25 01:06:08,406 INFO root Request: {'session': {'message_id': 1, 'session_id': 'cb645820-a84e-4177-ac75-da0160b71364', 'skill_id': '359f1724-cfb9-4157-8ae3-3a183defc5d0', 'user': {'user_id': '6FA304B83EDEFFB1AD76F24E89449A2F686FDDC3F1C40D4B58392DA24431C8A7'}, 'application': {'application_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E'}, 'user_id': 'CD64D0E995CB475BA866373B4200404A9CBBA950402D9E99B8FBB6620E6B639E', 'new': False}, 'version': '1.0', 'response': {'end_session': False, 'text': 'Этот город в стране - Россия'}}
+2025-04-25 01:06:08,774 INFO werkzeug 127.0.0.1 - - [25/Apr/2025 01:06:08] "POST /post HTTP/1.1" 200 -

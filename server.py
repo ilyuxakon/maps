@@ -71,4 +71,4 @@ def get_cities(req):
     return cities
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=8080, host='127.0.0.1')
