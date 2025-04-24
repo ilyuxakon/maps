@@ -49,7 +49,7 @@ def handle_dialog(res, req):
 
     elif len(cities) == 2:
 
-        distance = get_distance(get_geo_info(cities[0], 'coordinates'), get_geo_info(cities[1]), 'coordinates')
+        distance = get_distance(get_geo_info(cities[0], 'coordinates'), get_geo_info(cities[1], 'coordinates'))
         res['response']['text'] = 'Расстояние между этими городами: ' + str(round(distance)) + ' км.'
 
     else:
@@ -71,4 +71,4 @@ def get_cities(req):
     return cities
 
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    app.run()
