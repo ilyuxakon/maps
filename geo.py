@@ -2,24 +2,7 @@ import requests
 from math import sin, cos, sqrt, atan2, radians
 
 
-def get_coordinates(city):
-    url = "https://geocode-maps.yandex.ru/1.x/"
-
-    params = {
-        'geocode': city,
-        'format': 'json',
-        'apikey': "8013b162-6b42-4997-9691-77b7074026e0"
-    }
-
-    response = requests.get(url, params=params)
-    json = response.json()
-    point_str = json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['Point']['pos']
-    point_array = [float(x) for x in point_str.split(' ')]
-
-    return point_array
-
-
-def get_country(city):
+def get_geo_info(city, type_info):
     url = "https://geocode-maps.yandex.ru/1.x/"
 
     params = {
@@ -31,10 +14,16 @@ def get_country(city):
     response = requests.get(url, params=params)
     json = response.json()
 
-    return \
-        json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
-            'GeocoderMetaData'][
-            'AddressDetails']['Country']['CountryName']
+    if type_info == 'coordinates':
+        point_str = json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['Point']['pos']
+        point_array = [float(x) for x in point_str.split(' ')]
+        return point_array
+    
+    elif type_info == 'country':
+        return \
+            json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['metaDataProperty'][
+                'GeocoderMetaData'][
+                'AddressDetails']['Country']['CountryName']
 
 
 def get_distance(p1, p2):
