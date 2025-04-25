@@ -45,32 +45,32 @@ def handle_dialog(res, req):
 
     cities = get_cities(req)
 
-    if sessionStorage[user_id]['first_name'] in None:
+    if sessionStorage[user_id]['first_name'] is None:
         first_name = get_first_name(req)
-        if first_name in None:
+        if first_name is None:
             res['response']['text'] = 'Не расслышала имя. Повтори, пожалуйста!'
         else:
             sessionStorage[user_id]['first_name'] = first_name
-            res['response']['text'] = f'Приятно познакомиться {sessionStorage[user_id]["first_name"]},\n Я могу сказать в какой стране город или сказать расстояние между городами!'
+            res['response']['text'] = f'Приятно познакомиться {sessionStorage[user_id]["first_name"].capitalize()},\n Я могу сказать в какой стране город или сказать расстояние между городами!'
 
         return
 
     if len(cities) == 0:
 
-        res['response']['text'] = f'{sessionStorage[user_id]["first_name"]}, ты не написал название не одного города!'
+        res['response']['text'] = f'{sessionStorage[user_id]["first_name"].capitalize()}, ты не написал название не одного города!'
 
     elif len(cities) == 1:
 
-        res['response']['text'] = f'{sessionStorage[user_id]["first_name"]}, этот город в стране - ' + get_geo_info(cities[0], 'country')
+        res['response']['text'] = f'{sessionStorage[user_id]["first_name"].capitalize()}, этот город в стране - ' + get_geo_info(cities[0], 'country')
 
     elif len(cities) == 2:
 
         distance = get_distance(get_geo_info(cities[0], 'coordinates'), get_geo_info(cities[1], 'coordinates'))
-        res['response']['text'] = f'{sessionStorage[user_id]["first_name"]}, расстояние между этими городами: ' + str(round(distance)) + ' км.'
+        res['response']['text'] = f'{sessionStorage[user_id]["first_name"].capitalize()}, расстояние между этими городами: ' + str(round(distance)) + ' км.'
 
     else:
 
-        res['response']['text'] = f'{sessionStorage[user_id]["first_name"]}, слишком много городов!'
+        res['response']['text'] = f'{sessionStorage[user_id]["first_name"].capitalize()}, слишком много городов!'
 
 
 def get_cities(req):
